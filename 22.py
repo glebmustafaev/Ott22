@@ -1,17 +1,23 @@
-def get_matrix(n,m,value):
-    matrix = []
-    for  i in range(n):
-        list = []
-        matrix.append(list)
-        for j in range(m):
-            list.append(value)
-    return matrix
-result1 = get_matrix(2, 2, 10)
-result2 = get_matrix(3, 5, 42)
-result3 = get_matrix(4, 2, 13)
-print(result1)
-print(result2)
-print(result3)
+calls = 0
+def caunt_calls():
+    global calls
+    calls += 1
+def string_info(string):
+    caunt_calls()
+    return len(string), string.upper(), string.lower()
+def is_contains(string, list_to_search):
+    caunt_calls()
+    string = string.upper()
+    for i in list_to_search:
+        if string == i.upper():
+            return True
+    return  False
+
+print(string_info('Capybara'))
+print(string_info('Armageddon'))
+print(is_contains('Urban', ['ban', 'BaNaN', 'urBAN']))  # Urban ~ urBAN
+print(is_contains('cycle', ['recycling', 'cyclic']))  # No matches
+print(calls)
 
 
 
