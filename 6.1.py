@@ -31,7 +31,7 @@ class Predator(Animal):
             self.alive = False
 
 class Flower(Plant):
-    pass
+    edible = False
 
 class Fruit(Plant):
     edible = True
