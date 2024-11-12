@@ -17,7 +17,7 @@ class Video:
 
 
 class UrTube:
-    def __init__(self, users, videos, current_user):
+    def __init__(self):
         self.users = []
         self.videos = []
         self.current_user = None
