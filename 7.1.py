@@ -2,7 +2,7 @@ from pprint import pprint
 
 
 class Product:
-    
+
     def __init__(self, name: str, weight: float, category: str):
         self.name = name
         self.weight = weight
@@ -13,22 +13,22 @@ class Product:
 
 
 class Shop:
-    def __init__(self):
-        __file_name = 'products.txt'
+    __file_name = 'products.txt'
 
     def get_products(self):
-        file = open(self.__file_name, 'r')
-        file.close()
-        return pprint(file.read())
+        file = open(self.__file_name, 'r+')
 
     def add(self, *products):
         for i in products:
-            file = open(__file_name, 'r')
-            if i in self.__file_name:
-                print(f'Продукт {i} уже есть в магазине')
+            file = open(self.__file_name, 'r')
+            i_ = (str(i))
+            j = file.read()
+            file.close()
+            if i_ in j:
+                print(f'Продукт {i_} уже есть в магазине')
             else:
-                file = open(__file_name, 'a')
-                file.write(f'\n{i}')
+                file = open(self.__file_name, 'a')
+                file.write(f'\n{i_}')
                 file.close()
 
 
