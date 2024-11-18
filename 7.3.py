@@ -21,7 +21,7 @@ class WordsFinder:
         return all_words
 
     def find(self,word):
-        for word in j.split():
+        for word in j:
             i = word.lower()
             if i in j:
                 x = j.index(i)
