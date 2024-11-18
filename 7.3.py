@@ -20,17 +20,23 @@ class WordsFinder:
 
         return all_words
 
-    def find(self,word):
-        for word in j:
-            i = word.lower()
-            if i in j:
-                x = j.index(i)
-                print({self.file_names: x})
+    def find(self, word):
+        dict_ = {}
+        for name, words in self.get_all_words().items():
+            if word.lower() in words:
+                dict_[name] = words.index(word.lower()) + 1
+                return {self.file_names:dict_[name]}
 
-    # def count(self, word):
-    #     for file_names, words in get_all_words().items():
-    #         x = file_names.count(word)
-    #         print({file_names: x})
+    def count(self, word):
+        for name, words in self.get_all_words().items():
+            word = word.lower()
+            return {self.file_names: words.count(word)}
+
+
+finder2 = WordsFinder('test_file.txt')
+print(finder2.get_all_words())  # Все слова
+print(finder2.find('TEXT')) # 3 слово по счёту
+print(finder2.count('teXT')) # 4 слова teXT в тексте всего
 
 
 finder2 = WordsFinder('test_file.txt')
