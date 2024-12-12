@@ -19,6 +19,10 @@ class Knight(threading.Thread):
             print(f'{self.name} сражается {x} день, осталось {wargs} врагов')
 
 
+            if wargs <= 0:
+                print(f'{self.name} одержал победу на {x} день')
+
+
 first_knight = Knight('Sir Lancelot', 10)
 second_knight = Knight("Sir Galahad", 20)
 first_knight.start()
