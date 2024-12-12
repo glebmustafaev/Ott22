@@ -13,12 +13,10 @@ class Knight(threading.Thread):
         wargs = 100
         x = 0
         while wargs > 0:
-            time.sleep(1)
-            print(f'{self.name} сражается {x} день, осталось {wargs} врагов')
-            wargs -= self.power
             x += 1
-            if wargs == 0:
-                print(f'{self.name} одержал победу на {x} день')
+            time.sleep(1)
+            wargs -= self.power
+            print(f'{self.name} сражается {x} день, осталось {wargs} врагов')
 
 
 first_knight = Knight('Sir Lancelot', 10)
@@ -27,3 +25,4 @@ first_knight.start()
 second_knight.start()
 first_knight.join()
 second_knight.join()
+
